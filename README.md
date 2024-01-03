@@ -45,44 +45,98 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 
 4-bit Count Down Counter
-### Procedure
-/* write all the steps invloved */
+
+### PROGRAM :
+UP COUNTER
+
+Module upcounter(clk,a);
+
+input clk;
+
+output reg[3:0];
+
+always @(posedge clk)
+
+begin
+
+a[3]=(a[2]&a[1]&a[0])^a[3];
+
+a[2]=(a[1]&a[0])^a[2];
+
+a[1]=(a[0]^a[1]);
+
+a[0]= ^a[0];
+
+end
+
+endmodule
+
+DOWN COUNTER
+
+Module downcounter(clk,a);
+
+input clk;
+
+output reg[3:0]a;
+
+always @(posedge clk)
+
+begin
+
+a[3]=(~a[2]&~a[1]&~a[0])^a[3];
+
+a[2]=(~a[1]&~a[0])^a[2];
+
+a[1]=(~a[0]^a[1]);
+
+a[0]=1^a[0];
+
+end
+
+endmodule
 
 
 
-### PROGRAM 
-/*
-Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
 
 
 
 
 
-
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
-
-
+### RTL LOGIC UP COUNTER AND DOWN COUNTER  :
+UP COUNTER
 
 
 
 
+![243264207-bf2999c0-6bec-47f6-915f-b636aeda4576](https://github.com/KARTHICKT24/Exp-7-Synchornous-counters-/assets/149347526/d399ffca-a57a-47c8-9c74-8fb0c5548185)
+
+
+DOWN COUNTER:
+
+
+### TIMING DIGRAMS FOR COUNTER  :
+
+UP COUNTER:
+
+![Uploading 243264477-ba044594-b7e9-4289-9580-cf048d003b85.jpg…]()
+
+
+DOWN COUNTER:
+![Uploading 243264515-10d8818b-ae16-4829-88b0-c6586fe01ba8.jpg…]()
+
+
+### TRUTH TABLE :
+
+UP
+![Uploading 243264700-fe5c6e0f-b1d0-49ba-97fc-a9843ff1e42a.jpg…]()
 
 
 
-### TIMING DIGRAMS FOR COUNTER  
+DOWN
 
 
-
-
-
-### TRUTH TABLE 
-
-
-
-
-
+![Uploading 243264770-03ace885-dd9a-47ac-8ecd-392886805052.jpg…]()
 
 ### RESULTS 
+Thus synchornous counters up counter and down counter circuit are studied and the truth table for different logic gates are verified.
+![Uploading WhatsApp Image 2023-11-30 at 10.53.48_4b25a60b.jpg…]()
